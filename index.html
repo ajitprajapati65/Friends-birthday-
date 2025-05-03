@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Happy Birthday Laxmi!</title>
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      overflow-x: hidden;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body {
+      background: linear-gradient(270deg, #ff9a9e, #fad0c4, #ffdde1, #fbc2eb);
+      background-size: 800% 800%;
+      animation: gradientBG 20s ease infinite;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      padding: 100px 20px 40px;
+    }
+
+    @keyframes gradientBG {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    h1 {
+      font-size: 4em;
+      color: hotpink;
+      text-shadow: 0 0 20px lightpink;
+      z-index: 3;
+      margin-bottom: 40px;
+      opacity: 0;
+      animation: fadeHeading 2s forwards ease-out;
+    }
+
+    @keyframes fadeHeading {
+      to {
+        opacity: 1;
+      }
+    }
+
+    .card {
+      background: rgba(255, 255, 255, 0.4);
+      padding: 40px;
+      border-radius: 25px;
+      text-align: center;
+      max-width: 800px;
+      width: 100%;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+      position: relative;
+      backdrop-filter: blur(10px);
+      z-index: 2;
+    }
+
+    #wish-text {
+      font-size: 1.5em;
+      color: #444;
+      margin-top: 20px;
+      white-space: normal;
+      line-height: 1.8;
+      text-align: justify;
+    }
+
+    #wish-text span {
+      opacity: 0;
+      display: inline-block;
+      margin-right: 5px;
+      animation: fadeInWord 0.5s forwards;
+    }
+
+    @keyframes fadeInWord {
+      to {
+        opacity: 1;
+      }
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      h1 {
+        font-size: 3em;
+      }
+
+      .card {
+        padding: 30px;
+        font-size: 1.3em;
+      }
+
+      #wish-text {
+        font-size: 1.2em;
+      }
+    }
+
+    @media (max-width: 480px) {
+      h1 {
+        font-size: 2.5em;
+      }
+
+      .card {
+        padding: 20px;
+        font-size: 1.1em;
+      }
+
+      #wish-text {
+        font-size: 1.1em;
+      }
+    }
+  </style>
+</head>
+<body>
+  <h1>Happy Birthday Laxmi!</h1>
+
+  <div class="card">
+    <p id="wish-text">
+      Tumhe janmadin ki dher saari shubhkaamnayein!<br><br>
+      Tum Python seekhne mein itna busy ho ki lagta hai ki "hello world" tumhara sabse acha dost ban gaya hai!<br><br>
+      Agar code karna hota toh tumhare face pe "SyntaxError" likhna padta!<br><br>
+      Ek din aise hi "Hello, Laxmi!" keh kar tumhare code ko solve karenge hum sab!<br><br>
+      Matlab, tumhare coding skills ko dekh kar toh lagta hai "debugging" ka concept tumne apni life mein apply kar liya hai!<br><br>
+      Python seekh ke tumne apni life ko ek 'while loop' mein daal diya hai, jahan tumhe bas aur behtar karna hai!<br><br>
+      Tumhara birthday ho ya code ka bug, hamesha fixed raho aur chill maro!<br><br>
+      Tumhara din ho ya programming ka task, har kaam ko masti ke saath karo!<br><br>
+      Coding ki duniya tumhara intezaar kar rahi hai, bas apni keyboard uthao aur world ko dikhao!<br><br>
+      Happy Birthday Laxmi! May your life be full of successful projects and bug-free days!
+    </p>
+    <p style="margin-top: 30px;">— Tumhara coder dost (Ajit Prajapati)</p>
+  </div>
+
+  <script>
+    const p = document.getElementById("wish-text");
+    const words = p.innerText.split(" ");
+    p.innerHTML = '';
+    words.forEach((word, i) => {
+      const span = document.createElement('span');
+      span.textContent = word + ' ';
+      span.style.animationDelay = `${i * 0.15}s`;
+      p.appendChild(span);
+    });
+  </script>
+</body>
+</html>
